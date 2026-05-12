@@ -1536,23 +1536,25 @@ img, svg, iframe {
 .mobile-call-btn {
   width: 42px;
   height: 42px;
-  background: rgba(18, 64, 150, 0.05);
-  border: 1.5px solid var(--primary);
+  background: var(--primary);
+  border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  color: var(--primary) !important;
+  color: white !important;
   text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(18, 64, 150, 0.3);
 }
 
 .mobile-call-btn i {
   font-size: 1.1rem;
+  transform: rotate(0deg);
 }
 
 .mobile-call-btn:active {
-  background: var(--primary);
+  background: var(--primary-dark);
   color: white !important;
   transform: scale(0.9);
 }
