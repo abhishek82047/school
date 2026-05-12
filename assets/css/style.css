@@ -1548,10 +1548,10 @@ img, svg, iframe {
 }
 
 .mobile-call-btn {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   background: var(--primary);
-  border: 2px solid rgba(255, 255, 255, 0.4) !important; /* Outer circle ring */
+  border: 3px solid rgba(255, 255, 255, 0.45) !important; /* Prominent outer ring */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1563,7 +1563,8 @@ img, svg, iframe {
 }
 
 .mobile-call-btn i {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  display: block;
 }
 
 .mobile-call-btn:active {
