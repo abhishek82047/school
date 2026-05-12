@@ -1532,12 +1532,26 @@ img, svg, iframe {
   animation: pulse-whatsapp 2s infinite;
 }
 
-/* Mobile Call Button Header */
+/* Sticky Header on Scroll Up */
+.navbar {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
+}
+
+.header-visible {
+  transform: translateY(0);
+  background: white !important;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
+}
+
 .mobile-call-btn {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   background: var(--primary);
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important; /* Outer circle ring */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1545,12 +1559,11 @@ img, svg, iframe {
   transition: all 0.3s ease;
   color: white !important;
   text-decoration: none !important;
-  box-shadow: 0 4px 12px rgba(18, 64, 150, 0.3);
+  box-shadow: 0 4px 15px rgba(18, 64, 150, 0.4);
 }
 
 .mobile-call-btn i {
   font-size: 1.1rem;
-  transform: rotate(0deg);
 }
 
 .mobile-call-btn:active {

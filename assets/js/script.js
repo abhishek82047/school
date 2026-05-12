@@ -1,13 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Navbar Scroll Effect
+    // Navbar Scroll Effect (Sticky on Scroll Up)
     const navbar = document.querySelector('.navbar');
+    let lastScrollTop = 0;
+    
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
+
+        if (scrollTop > 150) {
+            if (scrollTop > lastScrollTop) {
+                // Scrolling Down
+                navbar.classList.add('header-hidden');
+                navbar.classList.remove('header-visible');
+            } else {
+                // Scrolling Up
+                navbar.classList.add('header-visible');
+                navbar.classList.remove('header-hidden');
+            }
+        } else {
+            navbar.classList.remove('header-hidden');
+            navbar.classList.remove('header-visible');
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
     // Hide Preloader after 1 second
