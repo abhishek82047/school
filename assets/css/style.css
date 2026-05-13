@@ -585,10 +585,10 @@ a {
     width: 60px !important; /* Scale down all icons */
   }
   
-  /* Specific mobile positions to clear text */
-  img[src*="5.png"] { top: 2% !important; left: 2% !important; width: 80px !important; }
-  img[src*="1.png"] { bottom: 2% !important; left: 2% !important; width: 100px !important; }
-  img[src*="3.png"] { bottom: 12% !important; top: auto !important; right: 2% !important; left: auto !important; width: 80px !important; }
+  /* Specific mobile positions to clear text - Shifted UP as requested */
+  img[src*="5.png"] { top: 1% !important; left: 2% !important; width: 70px !important; }
+  img[src*="1.png"] { bottom: 2% !important; left: 2% !important; width: 80px !important; }
+  img[src*="3.png"] { top: 8% !important; bottom: auto !important; right: 3% !important; left: auto !important; width: 75px !important; }
   img[src*="8.png"] { bottom: 5% !important; right: 2% !important; width: 60px !important; }
 }
 
@@ -848,39 +848,47 @@ a {
 
 /* Program Cards (Classes Levels) */
 .program-card {
-  transition: var(--transition);
-  border-radius: 24px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(18, 64, 150, 0.08) !important;
-  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 10px 30px rgba(18, 64, 150, 0.05) !important;
+  border: 1px solid rgba(18, 64, 150, 0.05);
   background: var(--white);
+  height: 100%;
 }
 
 .program-card-img-wrap {
   overflow: hidden;
   position: relative;
-  border-bottom: 5px solid var(--secondary);
+  height: 220px;
 }
 
 .program-card img {
-  height: 240px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 1s ease;
 }
 
 .program-card:hover img {
-  transform: scale(1.12);
+  transform: scale(1.1);
 }
 
 .program-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(18, 64, 150, 0.15) !important;
+  transform: translateY(-15px);
+  box-shadow: 0 30px 60px rgba(18, 64, 150, 0.15) !important;
+  border-color: rgba(18, 64, 150, 0.1);
 }
 
 .program-card .card-body {
-  padding: 35px 25px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  padding: 30px;
+  background: #ffffff;
+}
+
+.program-card .badge {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(5px);
 }
 
 /* Features */
@@ -1023,26 +1031,6 @@ a {
   animation: ticker 35s linear infinite;
 }
 
-/* Floating Elements */
-.whatsapp-float {
-  position: fixed;
-  width: 55px;
-  height: 55px;
-  bottom: 25px;
-  left: 25px;
-  background-color: #25d366;
-  color: #FFF;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 32px;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-.whatsapp-float:hover { transform: scale(1.1); color: #fff; }
 
 .scroll-top-btn {
   position: fixed; /* Always visible on screen */
@@ -1491,9 +1479,13 @@ html, body {
   position: relative;
 }
 
-img, svg, iframe {
+img, svg {
   max-width: 100%;
   height: auto;
+}
+
+iframe {
+  max-width: 100%;
 }
 
 /* WhatsApp Floating Button */
